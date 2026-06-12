@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aeschliman-jarvis.github.io/atlas-aeschliman/sitemap.xml
