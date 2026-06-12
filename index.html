@@ -4,85 +4,288 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Quote Rescue Kit</title>
-    <meta name="description" content="A $3 follow-up script kit for contractors and home-service sales reps with quoted jobs sitting silent. Includes SMS, email, voicemail, objection replies, and a daily checklist.">
+    <meta name="description" content="A simple calculator and $3 follow-up script kit for contractors with quoted jobs sitting silent.">
     <style>
+      :root {
+        color-scheme: light;
+        --ink: #172026;
+        --muted: #52616d;
+        --line: #d8d4cb;
+        --paper: #fbfaf7;
+        --panel: #ffffff;
+        --accent: #176f62;
+        --accent-dark: #104f46;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: #172026;
-        background: #f7f5ef;
-        line-height: 1.5;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.45;
       }
+
       main {
-        max-width: 760px;
+        max-width: 980px;
         margin: 0 auto;
-        padding: 56px 20px;
+        padding: 40px 20px 56px;
       }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--accent-dark);
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
       h1 {
-        font-size: 40px;
+        max-width: 760px;
         margin: 0 0 12px;
+        font-size: clamp(34px, 6vw, 58px);
+        line-height: 1.03;
+        letter-spacing: 0;
       }
-      h2 {
-        margin-top: 36px;
-      }
+
       .lead {
+        max-width: 700px;
+        margin: 0;
         font-size: 20px;
-        color: #43505a;
+        color: var(--muted);
       }
-      .product {
-        background: #fff;
-        border: 1px solid #ded8cb;
+
+      .tool {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        gap: 20px;
+        margin-top: 32px;
+        align-items: stretch;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
         border-radius: 8px;
-        padding: 24px;
-        margin-top: 24px;
+        padding: 22px;
       }
-      .price {
+
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        color: #2b373f;
+        font-size: 14px;
         font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        min-height: 42px;
+        padding: 8px 10px;
+        border: 1px solid #bfc8ce;
+        border-radius: 6px;
+        color: var(--ink);
+        background: #fff;
+        font: inherit;
+      }
+
+      .result {
+        display: grid;
+        gap: 12px;
+      }
+
+      .metric {
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .metric:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .offer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        margin-top: 20px;
+        align-items: center;
+      }
+
+      h2 {
+        margin: 0 0 8px;
         font-size: 24px;
       }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
       .button {
-        display: inline-block;
-        margin-top: 12px;
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
         padding: 10px 14px;
         border-radius: 6px;
-        background: #172026;
+        background: var(--accent);
         color: #fff;
         text-decoration: none;
-        font-weight: 700;
+        font-weight: 800;
+        white-space: nowrap;
       }
+
+      .button:visited {
+        color: #fff;
+      }
+
       a {
         color: #0b5cad;
       }
-      .button:visited {
-        color: #fff;
+
+      .small {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          padding-top: 28px;
+        }
+
+        .tool,
+        .offer,
+        .fields {
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>Quote Rescue Kit</h1>
-      <p class="lead">Copy-paste follow-up scripts for contractors and home-service sales reps with quoted jobs sitting silent.</p>
+      <p class="eyebrow">Quote Rescue Kit</p>
+      <h1>See what quiet quotes may be worth.</h1>
+      <p class="lead">Run the numbers on quoted jobs that went silent, then use a simple 5-day follow-up sequence to reopen the best ones.</p>
 
-      <section class="product">
-        <p class="price">$3 digital product</p>
-        <h2>What You Get</h2>
-        <p>A practical script kit for remodelers, countertop teams, flooring companies, roofers, fence/deck contractors, and other home-service teams who need a simple way to follow up after a quote.</p>
-        <ul>
-          <li>5-day SMS/email follow-up sequence</li>
-          <li>Voicemail scripts</li>
-          <li>Objection replies</li>
-          <li>Daily 10-minute follow-up checklist</li>
-          <li>Simple CRM tags for stuck quotes</li>
-        </ul>
-        <a class="button" href="https://buy.stripe.com/8x29AT3kubPt1G46jWebu00">Buy for $3</a>
-        <p>Digital delivery is handled by email after purchase.</p>
+      <section class="tool" aria-label="Quote recovery calculator">
+        <div class="panel">
+          <div class="fields">
+            <label>
+              Quiet quotes
+              <input id="quotes" type="number" min="0" step="1" value="12">
+            </label>
+            <label>
+              Average job value
+              <input id="value" type="number" min="0" step="100" value="4500">
+            </label>
+            <label>
+              Recovery close rate %
+              <input id="rate" type="number" min="0" max="100" step="1" value="8">
+            </label>
+            <label>
+              Minutes per follow-up
+              <input id="minutes" type="number" min="1" step="1" value="4">
+            </label>
+          </div>
+          <p class="small">A modest recovery rate can matter because these are already quoted opportunities, not brand-new leads.</p>
+        </div>
+
+        <aside class="panel result" aria-live="polite">
+          <div class="metric">
+            <span>Pipeline sitting quiet</span>
+            <strong id="pipeline">$54,000</strong>
+          </div>
+          <div class="metric">
+            <span>Possible recovered sales</span>
+            <strong id="recovered">$4,320</strong>
+          </div>
+          <div class="metric">
+            <span>Follow-up time</span>
+            <strong id="time">48 min</strong>
+          </div>
+        </aside>
       </section>
 
-      <h2>Use It Today</h2>
-      <p>Pick five quoted leads that have gone quiet. Send the Day 1 soft check-in to each one, then follow the sequence over the next four business days. The scripts are direct, respectful, and built to make the next step easy for the customer.</p>
+      <section class="panel offer">
+        <div>
+          <h2>$3 follow-up script kit</h2>
+          <p>Copy-paste SMS, email, voicemail, objection replies, and a 10-minute daily checklist for contractors and home-service reps.</p>
+          <ul>
+            <li>5-day quote follow-up sequence</li>
+            <li>Short voicemail scripts</li>
+            <li>Replies for price, timing, and scope objections</li>
+            <li>Simple CRM tags for stuck quotes</li>
+          </ul>
+        </div>
+        <a class="button" href="https://buy.stripe.com/8x29AT3kubPt1G46jWebu00">Buy for $3</a>
+      </section>
 
-      <h2>Support</h2>
-      <p>For product support, contact <a href="mailto:aeschliman2026@gmail.com">aeschliman2026@gmail.com</a>.</p>
+      <p class="small">Support: <a href="mailto:aeschliman2026@gmail.com">aeschliman2026@gmail.com</a></p>
     </main>
+
+    <script>
+      const money = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      })
+
+      const ids = ["quotes", "value", "rate", "minutes"]
+      const read = (id) => Math.max(0, Number(document.getElementById(id).value) || 0)
+
+      function render() {
+        const quotes = read("quotes")
+        const value = read("value")
+        const rate = Math.min(100, read("rate")) / 100
+        const minutes = read("minutes")
+
+        document.getElementById("pipeline").textContent = money.format(quotes * value)
+        document.getElementById("recovered").textContent = money.format(quotes * value * rate)
+        document.getElementById("time").textContent = `${Math.round(quotes * minutes)} min`
+      }
+
+      ids.forEach((id) => document.getElementById(id).addEventListener("input", render))
+      render()
+    </script>
   </body>
 </html>
