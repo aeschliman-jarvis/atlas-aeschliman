@@ -4,9 +4,9 @@ Atlas-Aeschliman creates small digital tools and templates for contractor and ho
 
 ## Current Product
 
-**The $3 Contractor Follow-Up Pack**
+**Quote Rescue Kit**
 
-A practical script pack for contractors and home-service sales reps who have quoted leads sitting silent.
+A practical script kit for contractors and home-service sales reps who have quoted jobs sitting silent.
 
 Purchase link: https://buy.stripe.com/8x29AT3kubPt1G46jWebu00
 
