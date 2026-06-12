@@ -1,6 +1,6 @@
-# Atlas-Aeschliman
+# Quote Rescue Kit
 
-Atlas-Aeschliman creates small digital tools and templates for contractor and home-service sales workflows.
+A small digital script kit for contractor and home-service sales workflows.
 
 ## Current Product
 
