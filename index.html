@@ -138,6 +138,34 @@
         align-items: center;
       }
 
+      .sample {
+        margin-top: 20px;
+      }
+
+      .sample-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .sample-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        background: #fff;
+      }
+
+      .sample-card h3 {
+        margin: 0 0 8px;
+        font-size: 17px;
+      }
+
+      .sample-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
       h2 {
         margin: 0 0 8px;
         font-size: 24px;
@@ -191,7 +219,8 @@
 
         .tool,
         .offer,
-        .fields {
+        .fields,
+        .sample-grid {
           grid-template-columns: 1fr;
         }
 
@@ -249,7 +278,7 @@
       <section class="panel offer">
         <div>
           <h2>$3 launch version</h2>
-          <p>A one-week AI sprint for home-service companies, created by Jacob Aeschliman with Atlas assistance.</p>
+          <p>A one-week AI sprint for home-service companies, created by Jacob Aeschliman with Atlas assistance. One-time digital download, not a subscription.</p>
           <ul>
             <li>Reusable company AI profile prompt</li>
             <li>Quote recovery, missed-call, and review workflows</li>
@@ -260,6 +289,25 @@
           <p class="small">Launch bonus: buyers can reply with their website and get one practical AI workflow suggestion for their business.</p>
         </div>
         <a class="button" href="https://buy.stripe.com/8x29AT3kubPt1G46jWebu00">Buy for $3</a>
+      </section>
+
+      <section class="sample">
+        <h2>Inside the sprint</h2>
+        <p>The pack is built for operators who need practical prompts and workflows, not theory. Each workflow gives the AI context, a usable task, and guardrails so the output sounds like a real company.</p>
+        <div class="sample-grid">
+          <article class="sample-card">
+            <h3>Quote recovery</h3>
+            <p>Turn a quiet estimate into a short, specific follow-up message with a clear next step and no pressure language.</p>
+          </article>
+          <article class="sample-card">
+            <h3>Estimate cleanup</h3>
+            <p>Paste rough notes and ask AI to find missing scope, unclear allowances, customer questions, and wording that could cause confusion.</p>
+          </article>
+          <article class="sample-card">
+            <h3>Weekly review</h3>
+            <p>Use a simple pipeline prompt to identify stale quotes, missed calls, review requests, and the next five revenue actions.</p>
+          </article>
+        </div>
       </section>
 
       <p class="small">Support: <a href="mailto:aeschliman2026@gmail.com">aeschliman2026@gmail.com</a> · <a href="./terms.html">Terms</a> · <a href="./privacy.html">Privacy</a></p>
