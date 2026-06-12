@@ -1,22 +1,22 @@
-# Quote Rescue Kit
+# Home Service AI Revenue Sprint
 
-A small digital script kit for contractor and home-service sales workflows.
+A small digital AI workflow playbook for contractor and home-service sales workflows.
 
 ## Current Product
 
-**Quote Rescue Kit**
+**Home Service AI Revenue Sprint**
 
-A practical script kit for contractors and home-service sales reps who have quoted jobs sitting silent.
+A practical AI workflow playbook for home-service companies that want faster follow-up, cleaner estimates, and better pipeline discipline.
 
 Purchase link: https://buy.stripe.com/8x29AT3kubPt1G46jWebu00
 
 Included:
 
-- 5-day SMS/email follow-up sequence
-- voicemail scripts
-- objection replies
-- daily 10-minute follow-up checklist
-- simple CRM tags for stuck quotes
+- one-week AI sprint plan
+- reusable company AI profile prompt
+- quote recovery, missed-call, and review workflows
+- estimate cleanup and scope clarification prompts
+- sales role-play and weekly pipeline review prompts
 
 ## Delivery
 
