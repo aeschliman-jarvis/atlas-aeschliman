@@ -142,6 +142,22 @@
         margin-top: 20px;
       }
 
+      .prompt-preview {
+        margin-top: 20px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .prompt-preview pre {
+        margin: 0;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        color: #263238;
+        font: 14px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
       .sample-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -294,6 +310,9 @@
       <section class="sample">
         <h2>Inside the sprint</h2>
         <p>The pack is built for operators who need practical prompts and workflows, not theory. Each workflow gives the AI context, a usable task, and guardrails so the output sounds like a real company.</p>
+        <div class="prompt-preview" aria-label="Sample prompt">
+          <pre>Sample prompt: "Act as my home-service sales coordinator. I will paste rough notes from quiet estimates, missed calls, and recent completed jobs. Return: 1) the five highest-value follow-up actions, 2) one plain-English message for each, 3) any missing scope or pricing questions, and 4) words to avoid so the message does not sound robotic or pushy."</pre>
+        </div>
         <div class="sample-grid">
           <article class="sample-card">
             <h3>Quote recovery</h3>
